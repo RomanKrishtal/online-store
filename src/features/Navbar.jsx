@@ -1,26 +1,48 @@
-const Navbar = () => {
+import Categories from "./Categories.jsx";
+import Deals from "./Deals.jsx";
+import { Link, useMatch, useResolvedPath } from "react-router-dom";
+
+const Navbar = ({to}) => {
+    const resolvedPath = useResolvedPath(to)
+    const isActive = useMatch( { path: resolvedPath.pathname, end: true} )
     return(
         <>
-        <div>
+        <div className=" text-neutral-200">
+        <div className="flex bg-cyan-950">
         <img></img>
-        <p>Deliver to</p>
-        <input type="text" />
+        <p className=" mr-auto">Deliver to</p>
+        <div className=" mr-auto">
+        <input type="text" className=" border-2"/>
         <button>
             <img></img>
         </button>
-        <span>Language</span>
-        <span>Returns & orders</span>
+        </div>
+        <span className=" mr-auto">Language</span>
+        <span className=" mr-auto">Returns & orders</span>
         <span>Cart</span>
         </div>
-        <div>
-            <ul>
-                <li><a></a></li>
-                <li><a></a></li>
-                <li><a></a></li>
-                <li><a></a></li>
-                <li><a></a></li>
+        <div className="bg-cyan-900">
+            <ul className="flex">
+                <li className={isActive ? "active mr-auto": "mr-auto"}>
+            <Link to="deals">
+                Deals
+            </Link>
+            </li>
+            <li className={isActive ? "active mr-auto": "mr-auto"}>
+            <Link to="categories">
+                Customer Service
+            </Link>
+        </li>
+            <li className={isActive ? "active": ""}>
+            <Link to="sell">
+                Sell
+            </Link>
+        </li>
             </ul>
+        </div>
         </div>
         </>
     )
 }
+
+export default Navbar;
