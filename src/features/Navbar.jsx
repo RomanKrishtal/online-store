@@ -1,4 +1,5 @@
 import Categories from "./Categories.jsx";
+import Content from "./Content.jsx";
 import Deals from "./Deals.jsx";
 import { Link, useMatch, useResolvedPath } from "react-router-dom";
 

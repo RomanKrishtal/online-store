@@ -10,6 +10,7 @@ function App() {
   return (
     <>
       <Navbar />
+      <Content />
       <Routes>
         <Route path='deals' element={<Deals />} />
         <Route path='categories' element={<Categories />} />
@@ -20,3 +21,5 @@ function App() {
 }
 
 export default App
+
+// ae3620924895adfc2db97818b1408599
