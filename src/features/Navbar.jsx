@@ -30,6 +30,12 @@ const Navbar = ({to}) => {
             </Link>
             </li>
             <li className={isActive ? "active mr-auto": "mr-auto"}>
+            <Link to="content">
+                Content
+            </Link>
+            </li>
+            
+            <li className={isActive ? "active mr-auto": "mr-auto"}>
             <Link to="categories">
                 Customer Service
             </Link>
