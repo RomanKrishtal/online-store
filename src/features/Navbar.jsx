@@ -11,7 +11,9 @@ const Navbar = ({to}) => {
         <div className=" text-neutral-200">
         <div className="flex bg-cyan-950">
         <img></img>
+        <a>
         <p className=" mr-auto">Deliver to</p>
+        </a>
         <div className=" mr-auto">
         <input type="text" className=" border-2"/>
         <button>
@@ -36,7 +38,7 @@ const Navbar = ({to}) => {
             </li>
             
             <li className={isActive ? "active mr-auto": "mr-auto"}>
-            <Link to="categories">
+            <Link to="customer">
                 Customer Service
             </Link>
         </li>
