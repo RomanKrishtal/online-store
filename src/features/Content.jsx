@@ -23,11 +23,12 @@ fakestore();
 
     // console.log(fake)
     return(
-        <div onLoad={() => useDispatch(addItems(items, fake))}>
-            <h1>Content</h1>
+        <>
+        <h1>Content</h1>
+        <div className="grid grid-cols-4">
             {fake.map((item) => {
                 return(
-                    <div key={item.id}>
+                    <div key={item.id} className=" border-4 gap-0.5">
                         <h1>{item.title.toUpperCase()}</h1>
                         <span>{item.category}</span>
                         <img  src={item.image}/>
@@ -47,6 +48,7 @@ fakestore();
                     )
             })} */}
         </div>
+        </>
     )
 }
 
