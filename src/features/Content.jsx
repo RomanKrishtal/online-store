@@ -1,12 +1,12 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addItems } from "./contentSlice.jsx";
+import addItems from "./contentSlice.jsx";
 
 function Content() {
     const [fake, setFake] = useState([]);
     const dispatch = useDispatch()
-    const items = useSelector(state => state.items)
+    const cart = useSelector(state => state.items)
     useEffect(() => {
 // axios.get('https://fakestoreapi.com/products').then(({data}) => {
 //     console.log(data)
@@ -32,21 +32,13 @@ fakestore();
                         <h1>{item.title.toUpperCase()}</h1>
                         <span>{item.category}</span>
                         <img  src={item.image}/>
-                        <p>Price: ${item.price}
-                        </p>
+                        <p>Price: ${item.price}</p>
+                        {/* <button onClick={() => dispatch(addItems(
+                            cart, item
+                        ))}>Add to cart</button> */}
                     </div>
                 )
             })}
-            {/* {items.map(item => {
-                return(
-                <div key={item.id}>
-                    <h1>{item.title.toUpperCase()}</h1>
-                    <span>{item.category}</span>
-                    <img  src={item.image}/>
-                    <p>Price: ${item.price}</p>
-                    </div>
-                    )
-            })} */}
         </div>
         </>
     )

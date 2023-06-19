@@ -1,6 +1,7 @@
 import Categories from "./Categories.jsx";
 import Content from "./Content.jsx";
 import Deals from "./Deals.jsx";
+import Cart from "./Cart.jsx";
 import { Link, useMatch, useResolvedPath } from "react-router-dom";
 
 const Navbar = ({to}) => {
@@ -22,7 +23,7 @@ const Navbar = ({to}) => {
         </div>
         <span className=" mr-auto">Language</span>
         <span className=" mr-auto">Returns & orders</span>
-        <span>Cart</span>
+        <Cart></Cart>
         </div>
         <div className="bg-cyan-900">
             <ul className="flex">
@@ -33,7 +34,7 @@ const Navbar = ({to}) => {
             </li>
             <li className={isActive ? "active mr-auto": "mr-auto"}>
             <Link to="content">
-                Content
+                Buy
             </Link>
             </li>
             

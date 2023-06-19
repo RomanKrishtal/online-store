@@ -1,12 +1,12 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 import axios from 'axios'
 
-export const getItems = createAsyncThunk("items/fetchItems", () => {
-  return fetch('https://fakestoreapi.com/products')
-  .then((response) => {
-    response.json()
-  })
-})
+// export const getItems = createAsyncThunk("items/fetchItems", () => {
+//   return fetch('https://fakestoreapi.com/products')
+//   .then((response) => {
+//     response.json()
+//   })
+// })
 
 const initialState = [
 ]
@@ -15,7 +15,7 @@ export const itemsSlice = createSlice({
   name: 'items',
   initialState,
   reducer: {
-    addItems: (state, action) => {
+    addItems: function(state, action) {
       return state.push(action.payload)
     }
   }
